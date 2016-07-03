@@ -4,8 +4,8 @@ defmodule Backend.Repo.Migrations.CreateReport do
   def change do
     create table(:reports) do
       add :user_id, references(:users, on_delete: :nothing)
-      add :geom, :geometry
       add :color_id, references(:colors, on_delete: :nothing)
+      add :geom, :geometry
       add :time, :datetime
 
       timestamps

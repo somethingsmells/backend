@@ -6,10 +6,13 @@ defmodule Backend.Report do
     belongs_to :color, Backend.Color
     has_many :events, Backend.Event
 
+    field :geom, Geo.Point
+    field :time, Ecto.DateTime
+
     timestamps
   end
 
-  @required_fields ~w(url)
+  @required_fields ~w(geom time)
   @optional_fields ~w()
 
   @doc """
