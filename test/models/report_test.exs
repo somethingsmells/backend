@@ -3,7 +3,7 @@ defmodule Backend.ReportTest do
 
   alias Backend.Report
 
-  @valid_attrs %{user_id: 231, geom: 123, color_id: 121, time: "2010-04-17 14:00:00"}
+  @valid_attrs %{user_id: 231, geom: %Geo.Point{coordinates: {30, -90}, srid: 4326}, color_id: 121, time: "2010-04-17 14:00:00"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
