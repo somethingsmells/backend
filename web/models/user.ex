@@ -2,6 +2,10 @@ defmodule Backend.User do
   use Backend.Web, :model
 
   schema "users" do
+    has_many :reports, Backend.Report
+    has_many :photos, Backend.Photo
+    has_many :events, Backend.Event
+
     field :deviceid, :string
     field :realname, :string
     field :username, :string
